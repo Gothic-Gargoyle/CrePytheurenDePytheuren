@@ -1,7 +1,7 @@
-import db.connectdb
+import db.dbmutations
 # start programma hier.
 def main():
-        db.connectdb.connectDB();
+        db.dbmutations.connectDB();
 
 
 if __name__ == "__main__":
