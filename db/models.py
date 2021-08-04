@@ -34,6 +34,7 @@ journal_entry = Table(
     Column('cod', Boolean),
     Column('vat', Integer),
     Column('description', String),
+    Column('definitive', Boolean),
 )
 
 relation = Table(
@@ -61,4 +62,5 @@ ledger_relations = Table(
     Column("ledger_id", Integer, ForeignKey('ledger.ledger_id')),
     Column("relation_id", Integer, ForeignKey('relation.relation_id'))
 )
+
 meta.create_all(engine)
