@@ -1,7 +1,7 @@
-import Accounting
+import db.connectdb
 # start programma hier.
 def main():
-    print("Hello World!")
+        db.connectdb.connectDB();
 
 
 if __name__ == "__main__":
