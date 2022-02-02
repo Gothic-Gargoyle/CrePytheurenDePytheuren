@@ -2,3 +2,5 @@
 /env/
 /venv/
 /old/
+/db/
+/bookkeeping.db

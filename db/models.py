@@ -17,10 +17,10 @@ administration = Table(
     Column("administration_name", String),
 )
 
-ledger = Table(
-    "ledger",meta,
-    Column('ledger_id', Integer, primary_key=True),
-    Column('ledger_name',String),
+account = Table(
+    "account",meta,
+    Column('account_id', Integer, primary_key=True),
+    Column('account_name',String),
     Column('has_relations', Boolean),
 )
 
@@ -48,18 +48,18 @@ relation = Table(
 administration_ledger = Table(
     "administration_ledger", meta,
     Column("administration_id", Integer, ForeignKey('administration.administration_id')),
-    Column("ledger_id", Integer, ForeignKey('ledger.ledger_id'))
+    Column("account_id", Integer, ForeignKey('account.account_id'))
 )
 
-ledgers_entry = Table(
-    "ledgers_entry", meta,
-    Column("ledger_id", Integer, ForeignKey('ledger.ledger_id')),
+account_entry = Table(
+    "account_entry", meta,
+    Column("account_id", Integer, ForeignKey('account.account_id')),
     Column("entry_id", Integer, ForeignKey('journal_entry.journal_entry_id'))
 )
 
-ledger_relations = Table(
-    "ledger_relations", meta,
-    Column("ledger_id", Integer, ForeignKey('ledger.ledger_id')),
+account_relations = Table(
+    "account_relations", meta,
+    Column("account_id", Integer, ForeignKey('account.account_id')),
     Column("relation_id", Integer, ForeignKey('relation.relation_id'))
 )
 
